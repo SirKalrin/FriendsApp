@@ -24,8 +24,8 @@ namespace FriendsApp
         {
             Friends = new List<Friend>();
 
-            Friends.Add(new Friend() { Name = "Kaj", Address = "Kajsvej 8", Email = "kaj@kaj.dk", PhoneNr = "69696969", ImageUrl = "power.png" });
-            Friends.Add(new Friend() { Name = "Kaj", Address = "Kajsvej 8", Email = "kaj@kaj.dk", PhoneNr = "69696969", ImageUrl = "power.png" });
+            Friends.Add(new Friend() { Name = "Bent H. Pedersen", Address = "Bentsvej 8", Email = "bhp@easv365.dk", PhoneNr = "69696969", ImageUrl = "bent.jpg" });
+            Friends.Add(new Friend() { Name = "Kristian Iversen", Address = "Bugway 69", Email = "billethebug@easv365.dk", PhoneNr = "$3XY", ImageUrl = "bille.jpg" });
         }
 
         //This method generates the XAML needed to fill the FriendList.
