@@ -13,7 +13,7 @@ namespace FriendsApp
         {
             InitializeComponent();
 
-            MainPage = new FriendsApp.MainPage();
+            MainPage = new NavigationPage(new FriendsApp.MainPage());
         }
 
         protected override void OnStart()

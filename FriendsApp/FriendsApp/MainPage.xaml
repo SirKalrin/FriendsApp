@@ -6,10 +6,10 @@
 
 	<StackLayout x:Name="MainLayout" Orientation="Vertical">
         <Label x:Name="FriendsCount" Text="0"></Label>
-        <ListView x:Name="FriendsList">
+        <ListView x:Name="FriendsList" ItemSelected="FriendsList_OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding Name}" ImageSource="{Binding ImageUrl}"></ImageCell>
+                    <ImageCell Text="{Binding Name}" ImageSource="{Binding ImageUrl}" ></ImageCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
