@@ -2,14 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FriendsApp.DetailsPage">
-    
-   <StackLayout x:Name="InfoContainer" Orientation="Vertical">
-        <Label x:Name="Name" Text="{Binding Name}"></Label>
-        <Label x:Name="Address" Text="{Binding Address}"></Label>
-        <Label x:Name="PhoneNr" Text="{Binding PhoneNr}"></Label>
-        <Label x:Name="Email" Text="{Binding Email}"></Label>
-        <Label x:Name="GpsLocation" Text="{Binding GpsLocation}"></Label>
-        <Image x:Name="Image" Source="{Binding ImageUrl}"></Image>
-        <Label x:Name="Homepage" Text="{Binding HomepageUrl}"></Label>
-    </StackLayout>
+
+    <ScrollView>
+        <StackLayout x:Name="InfoContainer" Orientation="Vertical" BackgroundColor="#ADD8E6">
+            <StackLayout x:Name="InfoHead" Orientation="Horizontal">
+                <Label FontSize="20" x:Name="Name" Text="{Binding Name}"></Label>
+                <Image Source="editicon.png" Rotation="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="EditBtn_OnClicked" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Label x:Name="Address" Text="{Binding Address,         StringFormat='Address:  {0}'}"></Label>
+            <Label x:Name="PhoneNr" Text="{Binding PhoneNr,         StringFormat='Phone:    {0}'}"></Label>
+            <Label x:Name="Email" Text="{Binding Email,             StringFormat='Email:    {0}'}"></Label>
+            <Label x:Name="GpsLocation" Text="{Binding GpsLocation, StringFormat='Location: {0}'}"></Label>
+            <Label x:Name="Homepage" Text="{Binding HomepageUrl,    StringFormat='Homepage: {0}'}"></Label>
+            <Image x:Name="Image" Source="{Binding ImageUrl}"></Image>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FriendsApp.Models
+﻿namespace FriendsApp.Models
 {
+    /*
+     * This class is our model for a friend in this application.
+    */
     public class Friend
     {
         public string Id { get; set; }
@@ -17,12 +13,5 @@ namespace FriendsApp.Models
         public string ImageUrl { get; set; }
         public string GpsLocation { get; set; }
         public string HomepageUrl { get; set; }
-
-        public Friend()
-        {
-            
-        }
     }
-
-
 }
