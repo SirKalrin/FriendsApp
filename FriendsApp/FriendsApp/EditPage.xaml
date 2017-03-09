@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FriendsApp.EditPage">
+
+    <ScrollView>
+        <StackLayout x:Name="InfoContainer" Orientation="Vertical" BackgroundColor="#ADD8E6">
+            <Entry x:Name="Name"  FontSize="20" Placeholder="{Binding Name}" TextChanged="Edited"></Entry>
+            <Entry x:Name="Address"  Placeholder="{Binding Address,         StringFormat='Address:  {0}'}" TextChanged="Edited"></Entry>
+            <Entry x:Name="PhoneNr" Placeholder="{Binding PhoneNr,         StringFormat='Phone:    {0}'}" TextChanged="Edited"></Entry>
+            <Entry x:Name="Email" Placeholder="{Binding Email,             StringFormat='Email:    {0}'}" TextChanged="Edited"></Entry>
+            <Entry x:Name="GpsLocation" Placeholder="{Binding GpsLocation, StringFormat='Location: {0}'}" TextChanged="Edited"></Entry>
+            <Entry x:Name="Homepage" Placeholder="{Binding HomepageUrl,    StringFormat='Homepage: {0}'}" TextChanged="Edited"></Entry>
+            <Entry x:Name="Image" Placeholder="{Binding ImageUrl,    StringFormat='ImageURL: {0}'}" TextChanged="Edited"></Entry>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="SaveBtn" Text="Save" Clicked="SaveBtn_OnClicked"></Button>
+                <Button x:Name="CancelBtn" Text="Cancel" Clicked="CancelBtn_OnClicked"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

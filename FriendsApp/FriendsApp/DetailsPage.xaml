@@ -12,6 +12,11 @@
                         <TapGestureRecognizer Tapped="EditBtn_OnClicked" NumberOfTapsRequired="1"/>
                     </Image.GestureRecognizers>
                 </Image>
+                <Image Source="deleteIcon.ico">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DeleteBtn_OnClicked" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
             </StackLayout>
             <Label x:Name="Address" Text="{Binding Address,         StringFormat='Address:  {0}'}"></Label>
             <Label x:Name="PhoneNr" Text="{Binding PhoneNr,         StringFormat='Phone:    {0}'}"></Label>

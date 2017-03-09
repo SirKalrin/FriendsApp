@@ -12,15 +12,30 @@ namespace FriendsApp
      */
     public partial class DetailsPage : ContentPage
     {
+        private FriendManager _friendMgr;
+        private Friend _selectedFriend;
         public DetailsPage(Friend selectedFriend)
         {
             InitializeComponent();
+            _selectedFriend = selectedFriend;
             InfoContainer.BindingContext = selectedFriend;
+            _friendMgr = FriendManager.GetInstance();
         }
 
-        private void EditBtn_OnClicked(object sender, EventArgs e)
+        private async void EditBtn_OnClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new EditPage(_selectedFriend));
+        }
+
+        private async void DeleteBtn_OnClicked(object sender, EventArgs e)
+        {
+            
+            if (await DisplayAlert("ALERT", $"Are you sure you want to delete{_selectedFriend.Name}", "Yes", "No"))
+            {
+                _friendMgr.DeleteFriend(_selectedFriend);
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 1]);
+                await Navigation.PopAsync();
+            }
         }
     }
 }
