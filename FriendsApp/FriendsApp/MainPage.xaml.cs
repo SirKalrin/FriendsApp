@@ -28,16 +28,21 @@ namespace FriendsApp
         /*
          * ItemSelectedEvent from ListView FriendsList. This adds a new Page to the stack using the Navigation tools.
          */
-        private async void FriendsList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            await Navigation.PushAsync(new DetailsPage(e.SelectedItem as Friend));
-        }
+        //private async void FriendsList_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        //{
+        //    await Navigation.PushAsync(new DetailsPage(e.SelectedItem as Friend));
+        //}
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             FriendsList.ItemsSource = null;
             FriendsList.ItemsSource = _friendMgr.GetFriendsLst();
+        }
+
+        private async void FriendsList_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushAsync(new DetailsPage(e.Item as Friend));
         }
     }
 }

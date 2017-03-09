@@ -7,7 +7,7 @@
     <ScrollView>
         <StackLayout x:Name="MainLayout" Orientation="Vertical">
             <Label x:Name="FriendsCount" Text="{Binding NumberOfFriends, StringFormat='You have {0} friends!'}"></Label>
-            <ListView x:Name="FriendsList" ItemSelected="FriendsList_OnItemSelected" BackgroundColor="#ADD8E6" SeparatorColor="Aqua">
+            <ListView x:Name="FriendsList" ItemTapped="FriendsList_OnItemTapped" BackgroundColor="#ADD8E6" SeparatorColor="Aqua">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell Text="{Binding Name}" ImageSource="{Binding ImageUrl}"></ImageCell>
